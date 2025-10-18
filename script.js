@@ -39,12 +39,14 @@ function speakWord() {
   speechSynthesis.speak(utter);
 }
 
+// 🎁 Emoji thưởng sau khi làm đúng
 function rewardEmoji() {
   const emoji = document.getElementById("emoji");
   emoji.classList.remove("hidden");
   setTimeout(() => emoji.classList.add("hidden"), 2000);
 }
 
+// 🤖 AI tạo hội thoại (sử dụng API Gemini)
 async function generateDialogue() {
   const words = flashcards.map(f => f.hanzi);
   const prompt = `Tạo một đoạn hội thoại ngắn (2-3 câu) bằng tiếng Trung, dùng các từ: ${words.join(", ")}.
